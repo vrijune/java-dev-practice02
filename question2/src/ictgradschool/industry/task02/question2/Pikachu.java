@@ -31,3 +31,9 @@ public class Pikachu extends Pokemon {
 
 }
 
+public class Pikachu implements INoise{
+    @Override
+    public String makeNoise() {
+        return "Pika pika";
+    }
+}
