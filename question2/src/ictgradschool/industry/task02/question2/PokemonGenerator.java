@@ -27,10 +27,11 @@ public class PokemonGenerator {
         }
     }
 
+
     // TODO Step iv a. Create the printWaterPokemon() method.
     public void printWaterPokemon() {
         for (int i = 0; i <= pokemons.length - 1; i++) {
-            if (pokemons[i].type.getType().equals("Water")) {
+            if (pokemons[i].getType() instanceof WaterType) {
                 System.out.println("I say " + "" + ((INoise) pokemons[i]).makeNoise() + "" + " when I attack!");
             }
         }
@@ -67,34 +68,29 @@ public class PokemonGenerator {
 
         // TODO Step v. Randomly generate an display three attacks.
 
-        for (int i = 0; i < pokemons.length; i++) {
-            for (int j = 0; j < pokemons.length; j++) {
-                if (i == (j = 0)) {
-                    System.out.println(pokemons[i + 1].attack(pokemons[j]));
+        for (int i = 0; i < 4; i++) {
+            Pokemon attack = pokemons[(int) (Math.random() * 4)];
 
-                } else if (i == (j = 3)) {
-                    System.out.println(pokemons[i - 1].attack((pokemons[j])));
-                } else if (i == (j = 1)) {
-                    System.out.println(pokemons[i + 1].attack(pokemons[j]));
-                } else if (i == (j = 2)) {
-                    System.out.println(pokemons[i + 1].attack(pokemons[j + 1]));
-                } else if (i!=j)
-                    {
-                    System.out.println(pokemons[i].attack(pokemons[j]));
-                }
+            Pokemon defense = pokemons[(int) (Math.random() * 4)];
 
 
-                System.out.println("-------------------");
-                System.out.println();
-
-                System.out.println("Pokemons' status after the attacks");
-                System.out.println("==================================");
-                // TODO Step iii b. Appropriately call the printPokemonGreetings() method.
-                printPokemonGreeting();
-                System.out.println("==================================");
-
+            if (attack != defense) {
+                System.out.println(attack.getName() + " attacked " + defense.getName());
+                attack.attack(defense);
             }
+        }
+
+            System.out.println("-------------------");
+            System.out.println();
+
+            System.out.println("Pokemons' status after the attacks");
+            System.out.println("==================================");
+            // TODO Step iii b. Appropriately call the printPokemonGreetings() method.
+            printPokemonGreeting();
+            System.out.println("==================================");
 
         }
+
     }
-}
+
+

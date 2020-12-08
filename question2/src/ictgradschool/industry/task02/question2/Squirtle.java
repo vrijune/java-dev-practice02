@@ -1,7 +1,7 @@
 package ictgradschool.industry.task02.question2;
 
 public class Squirtle extends Pokemon implements INoise{
-private IType type;
+//private IType type;
 
 
 

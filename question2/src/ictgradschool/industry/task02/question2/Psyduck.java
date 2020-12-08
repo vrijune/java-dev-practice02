@@ -1,7 +1,7 @@
 package ictgradschool.industry.task02.question2;
 
 public class Psyduck extends Pokemon implements INoise {
-    private IType type;
+//    private IType type;
 
     public Psyduck(String name, int level) {
         super(name, level);
@@ -14,6 +14,8 @@ public class Psyduck extends Pokemon implements INoise {
         other.loseLifePoints(20 * level);
         lifePoint += 1;
         levelUp();
+
+
         return false;
     }
 
