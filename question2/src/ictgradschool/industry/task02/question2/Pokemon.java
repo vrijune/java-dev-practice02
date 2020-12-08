@@ -12,7 +12,7 @@ public abstract class Pokemon {
         this.lifePoint = 10;
     }
 
-    public abstract void attack(Pokemon other);
+    public abstract boolean attack(Pokemon other);
 
     public abstract void levelUp();
 

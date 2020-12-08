@@ -10,10 +10,11 @@ public class Pikachu extends Pokemon implements INoise{
 
 
     @Override
-    public void attack(Pokemon other) {
+    public boolean attack(Pokemon other) {
         other.loseLifePoints(3 * level);
         lifePoint += 3;
         levelUp();
+        return false;
     }
 
 

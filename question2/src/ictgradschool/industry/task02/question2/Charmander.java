@@ -9,11 +9,12 @@ public class Charmander extends Pokemon implements INoise{
     }
 
     @Override
-    public void attack(Pokemon other) {
+    public boolean attack(Pokemon other) {
         other.loseLifePoints(100 * level);
         lifePoint += 5;
         levelUp();
 
+        return false;
     }
 
 

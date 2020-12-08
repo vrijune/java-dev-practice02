@@ -10,10 +10,11 @@ public class Psyduck extends Pokemon implements INoise {
 
 
     @Override
-    public void attack(Pokemon other) {
+    public boolean attack(Pokemon other) {
         other.loseLifePoints(20 * level);
         lifePoint += 1;
         levelUp();
+        return false;
     }
 
 

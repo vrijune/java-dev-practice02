@@ -11,11 +11,12 @@ private IType type;
     }
 
     @Override
-    public void attack(Pokemon other) {
+    public boolean attack(Pokemon other) {
         other.loseLifePoints(2 * level);
         lifePoint += 2;
         levelUp();
 
+        return false;
     }
 
     @Override
