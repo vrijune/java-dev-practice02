@@ -41,14 +41,23 @@ public class FlyingApplication {
 
     // TODO Step 3.  Write the printPlanesArray() method
     private void printPlanesArray(Aeroplane[] planes) {
-     for (int i = 0; i<planes.length(); i++ ){
-         System.out.println();
-     }
+        for (int i = 0; i < planes.length; i++) {
+//            Aeroplane print = planes[i];
+            System.out.println(planes[i]);
+        }
     }
 
 
     // TODO Step 4.  Write the getOldestAeroplane() method.
     private Aeroplane getOldestAeroplane(Aeroplane[] planes) {
+        Aeroplane oldestPlane = planes[0];
+        for (int i = 0; i < planes.length; i++) {
+            if (!oldestPlane.isOlderThan(planes[i])) {
+                oldestPlane = planes[i];
+            }
+
+        }
+        return oldestPlane;
 
     }
 

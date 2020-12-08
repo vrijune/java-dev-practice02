@@ -1,11 +1,13 @@
 package ictgradschool.industry.task02.question2;
 
-public class Pikachu extends Pokemon {
+public class Pikachu extends Pokemon implements INoise{
+
 
     public Pikachu(String name, int level) {
         super(name, level);
-
+       type = new ElectricType();
     }
+
 
     @Override
     public void attack(Pokemon other) {
@@ -13,6 +15,7 @@ public class Pikachu extends Pokemon {
         lifePoint += 3;
         levelUp();
     }
+
 
     @Override
     public void levelUp() {
@@ -29,11 +32,10 @@ public class Pikachu extends Pokemon {
         return level * 100;
     }
 
-}
 
-public class Pikachu implements INoise{
+
     @Override
     public String makeNoise() {
-        return "Pika pika";
+        return "Pika Pika";
     }
 }
