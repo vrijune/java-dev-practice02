@@ -32,7 +32,7 @@ public class PokemonGenerator {
     public void printWaterPokemon() {
         for (int i = 0; i <= pokemons.length - 1; i++) {
             if (pokemons[i].getType() instanceof WaterType) {
-                System.out.println("I say " + "" + ((INoise) pokemons[i]).makeNoise() + "" + " when I attack!");
+                System.out.println("I say \""+ ((INoise) pokemons[i]).makeNoise() + "\" when I attack!");
             }
         }
     }
@@ -70,8 +70,15 @@ public class PokemonGenerator {
 
         for (int i = 0; i < 4; i++) {
             Pokemon attack = pokemons[(int) (Math.random() * 4)];
-
             Pokemon defense = pokemons[(int) (Math.random() * 4)];
+
+//            int num1 = (int)(Math.random()*pokemons.length);
+//            Pokemon attacker = pokemons[num];
+//            int num2 = (int)(Math.random()*pokemons.length);
+//            while(num1 ==num2){
+//                num2 = (int)(Math.random()*pokemons.length);
+//
+//            }
 
 
             if (attack != defense) {
